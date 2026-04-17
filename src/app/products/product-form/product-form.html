@@ -1,0 +1,11 @@
+<h2>{{ isEdit ? 'Edit' : 'Add' }} Product</h2>
+<input [(ngModel)]="product.name" placeholder="Name" />
+<input [(ngModel)]="product.sku" placeholder="SKU" />
+<select [(ngModel)]="product.categoryId">
+  <option value="0">Select Category</option>
+  <option value="1">Category 1</option>
+  <option value="2">Category 2</option>
+  <option value="3">Category 3</option>
+</select>
+
+<button (click)="save()">Save</button><p>product-form works!</p>
