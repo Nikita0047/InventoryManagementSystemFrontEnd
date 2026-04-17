@@ -1,0 +1,18 @@
+<p>category-list works!</p>
+<button routerLink="/add-category">Add Category</button>
+
+<table>
+  <tr>
+    <th>Name</th>
+   
+  </tr>
+
+  <tr *ngFor="let c of categories">
+    <td>{{ c.name }}</td>
+   
+    <td>
+      <button [routerLink]="['/edit-category', c.id]">Edit</button>
+      <button (click)="delete(c.id)">Delete</button>
+    </td>
+  </tr>
+</table>
