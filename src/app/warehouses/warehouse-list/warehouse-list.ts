@@ -2,13 +2,14 @@ import { Component } from '@angular/core';
 import{ Warehouse } from '../../models/warehouse';
 import { RouterModule } from '@angular/router';
 import { WarehouseService } from '../../services/warehouse.service';
+import{ OnInit } from '@angular/core';
 @Component({
   selector: 'app-warehouse-list',
   imports: [RouterModule],
   templateUrl: './warehouse-list.html',
   styleUrl: './warehouse-list.scss',
 })
-export class WarehouseList {
+export class WarehouseList implements OnInit  {
 warehouses: Warehouse[]=[];
 constructor(private Service: WarehouseService) {}
 

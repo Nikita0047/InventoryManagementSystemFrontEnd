@@ -1,0 +1,18 @@
+<p>stock-list works!</p>
+<button type="button" routerLink="/add-stock">Add stocks</button>
+<table>
+    <tr>
+      <th>productId</th>
+      <th>warehouseId</th>
+      <th>Quantity</th>
+    </tr>
+  
+    <tr *ngFor="let s of stocks">
+      <td>{{ s.productId }}</td>
+      <td>{{ s.warehouseId }}</td>
+      <td>{{ s.quantity}}</td>
+      <td>
+        <button [routerLink]="['/edit-stock', s.id]">Edit</button>
+        <button (click)="delete(s.id)">Delete</button>
+      </td>
+    </tr>
