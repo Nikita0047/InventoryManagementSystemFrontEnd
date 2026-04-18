@@ -1,0 +1,18 @@
+<p>warehouse-list works!</p>
+<button type="button" routerLink="/add-warehouse">Add Warehouse</button>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Location</th>
+    <th>Actions</th>
+  </tr>
+
+  <tr *ngFor="let w of warehouses">
+    <td>{{ w.name }}</td>
+    <td>{{ w.location }}</td>
+    <td>
+      <button [routerLink]="['/edit-warehouse', w.id]">Edit</button>
+      <button (click)="delete(w.id)">Delete</button>
+    </td>
+  </tr>
