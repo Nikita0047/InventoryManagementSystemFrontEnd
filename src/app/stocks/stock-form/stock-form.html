@@ -1,0 +1,20 @@
+<h2>{{ isEdit ? 'Edit' : 'Add' }} Stock</h2>
+<select [(ngModel)]="stock.warehouseId">
+    <option value="0">Select warehouse</option>
+    <option value="1">1</option>
+    <option value="2">2</option>
+    <option value="3">3</option>
+  </select>
+<select [(ngModel)]="stock.productId">
+    <option value="0">Select product</option>
+    <option value="1">product1</option>
+    <option value="2">product2</option>
+    <option value="3">product3</option>
+  </select>
+  <select [(ngModel)]="stock.quantity">
+    <option value="0">Select Quantity</option>
+    <option value="1">1</option>
+    <option value="2">2</option>
+    <option value="3">3</option>
+  </select>
+  <button (click)="save()">Save</button>

@@ -5,6 +5,8 @@ import { ProductList } from './products/product-list/product-list';
 import { Routes } from '@angular/router';
 import { WarehouseForm } from './warehouses/warehouse-form/warehouse-form';
 import { WarehouseList } from './warehouses/warehouse-list/warehouse-list';
+import { StockList } from './stocks/stock-list/stock-list';
+import { StockForm } from './stocks/stock-form/stock-form';
 export const routes: Routes = [
   { path: 'products', component: ProductList},
   { path: 'add-product', component: ProductForm },
@@ -17,6 +19,10 @@ export const routes: Routes = [
   {path: 'warehouses', component: WarehouseList},
   {path: 'add-warehouse', component: WarehouseForm},
   {path: 'edit-warehouse/:id', component: WarehouseForm},
+
+  {path: 'stock', component: StockList},
+  {path: 'add-stock', component: StockForm},
+  {path: 'edit-stock/:id', component: StockForm},
 
   { path: '**', redirectTo: 'products' },
 
