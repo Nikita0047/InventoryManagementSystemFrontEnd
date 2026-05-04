@@ -6,6 +6,7 @@ import { RouterModule } from '@angular/router';
 import{ OnInit } from '@angular/core';
 @Component({
   selector: 'app-stock-list',
+  standalone: true,
   imports: [CommonModule, RouterModule],
   templateUrl: './stock-list.html',
   styleUrl: './stock-list.scss',

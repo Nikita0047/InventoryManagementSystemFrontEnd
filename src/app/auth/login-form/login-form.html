@@ -1,0 +1,23 @@
+<p>login-form works!</p>
+<h2>Login page</h2>
+<form (ngSubmit)="onSubmit()">
+  <input
+    type="email"
+    placeholder="Email"
+    [(ngModel)]="signInData.email"
+    name="email"
+    required
+  />
+
+  <input
+    type="password"
+    placeholder="Password"
+    [(ngModel)]="signInData.password"
+    name="password"
+    required
+  />
+
+  <button type="submit" [disabled]="isLogin">
+    {{ isLogin ? 'Logging in...' : 'Login' }}
+  </button>
+</form>
