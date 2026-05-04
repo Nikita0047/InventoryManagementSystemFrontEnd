@@ -5,6 +5,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 @Component({
   selector: 'app-category-form',
+  standalone: true,
   imports: [FormsModule],
   templateUrl: './category-form.html',
   styleUrl: './category-form.scss',

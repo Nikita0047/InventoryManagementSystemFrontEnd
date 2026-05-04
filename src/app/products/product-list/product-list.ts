@@ -5,6 +5,7 @@ import { Product } from '../../models/product';
 import { CommonModule } from '@angular/common';
 @Component({
   selector: 'app-product-list',
+  standalone: true,
   templateUrl: './product-list.html',
   imports: [RouterModule, CommonModule]
 })

@@ -1,0 +1,68 @@
+<p>signup-form works!</p>
+<!-- features/auth/register/register.component.html -->
+<div class="register-container">
+  <h2>Create Account</h2>
+
+  <!-- error message -->
+  <div *ngIf="errorMessage" class="error">
+    {{ errorMessage }}
+  </div>
+
+  <!-- success message -->
+  <div *ngIf="successMessage" class="success">
+    {{ successMessage }}
+  </div>
+
+  <form (ngSubmit)="onSubmit()">
+
+    <input
+      type="text"
+      placeholder="First Name"
+      [(ngModel)]="signUpData.firstName"
+      name="firstName"
+      required
+    />
+
+    <input
+      type="text"
+      placeholder="Last Name"
+      [(ngModel)]="signUpData.lastName"
+      name="lastName"
+      required
+    />
+
+    <input
+      type="email"
+      placeholder="Email"
+      [(ngModel)]="signUpData.email"
+      name="email"
+      required
+    />
+
+    <input
+      type="password"
+      placeholder="Password"
+      [(ngModel)]="signUpData.password"
+      name="password"
+      required
+    />
+
+    <input
+      type="password"
+      placeholder="Confirm Password"
+      [(ngModel)]="signUpData.confirmPassword"
+      name="confirmPassword"
+      required
+    />
+
+    <button type="submit" [disabled]="isLoading">
+      {{ isLoading ? 'Creating Account...' : 'Sign Up' }}
+    </button>
+
+  </form>
+
+  <!-- link to login -->
+  <p>Already have an account? 
+    <a routerLink="/login">Login here</a>
+  </p>
+</div>

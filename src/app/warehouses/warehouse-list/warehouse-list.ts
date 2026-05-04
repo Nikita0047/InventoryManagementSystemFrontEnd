@@ -3,9 +3,10 @@ import{ Warehouse } from '../../models/warehouse';
 import { RouterModule } from '@angular/router';
 import { WarehouseService } from '../../services/warehouse.service';
 import{ OnInit } from '@angular/core';
+import { CommonModule } from '@angular/common';
 @Component({
   selector: 'app-warehouse-list',
-  imports: [RouterModule],
+  imports: [RouterModule, CommonModule],
   templateUrl: './warehouse-list.html',
   styleUrl: './warehouse-list.scss',
 })

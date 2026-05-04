@@ -5,6 +5,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 @Component({
   selector: 'app-stock-form',
+  standalone: true,
   imports: [FormsModule],
   templateUrl: './stock-form.html',
   styleUrl: './stock-form.scss',
