@@ -1,0 +1,31 @@
+<div class="container mt-4">
+  <div class="d-flex justify-content-between align-items-center mb-4">
+    <h2>Stock Transfer Items</h2>
+    <a routerLink="/add-stock-transfer-item" class="btn btn-primary">Add New Item</a>
+  </div>
+
+  <table class="table table-striped table-hover">
+    <thead class="table-dark">
+      <tr>
+        <th>ID</th>
+        <th>Product Name</th>
+        <th>Quantity</th>
+        <th class="text-center">Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of stockTransferItems">
+        <td>{{ item.id }}</td>
+        <td>{{ item.productName || 'N/A' }}</td>
+        <td>{{ item.quantity }}</td>
+        <td class="text-center">
+          <button [routerLink]="['/edit-stock-transfer-item', item.id]" class="btn btn-sm btn-warning me-2">Edit</button>
+          <button (click)="delete(item.id)" class="btn btn-sm btn-danger">Delete</button>
+        </td>
+      </tr>
+      <tr *ngIf="stockTransferItems.length === 0">
+        <td colspan="4" class="text-center">No stock transfer items found.</td>
+      </tr>
+    </tbody>
+  </table>
+</div>

@@ -1,0 +1,26 @@
+<div>
+  <h2>{{ isEdit ? 'Edit' : 'Add' }} Stock Transfer</h2>
+  <form (ngSubmit)="save()">
+    <div>
+      <label for="fromWarehouse">From Warehouse:</label>
+      <select id="fromWarehouse" [(ngModel)]="stockTransfer.fromWarehouseId" name="fromWarehouseId" required>
+        <option *ngFor="let w of warehouses" [value]="w.id">{{ w.name }}</option>
+      </select>
+    </div>
+
+    <div>
+      <label for="toWarehouse">To Warehouse:</label>
+      <select id="toWarehouse" [(ngModel)]="stockTransfer.toWarehouseId" name="toWarehouseId" required>
+        <option *ngFor="let w of warehouses" [value]="w.id">{{ w.name }}</option>
+      </select>
+    </div>
+
+    <div>
+      <label for="transferDate">Transfer Date:</label>
+      <input type="date" id="transferDate" [ngModel]="stockTransfer.transferDate | date:'yyyy-MM-dd'" (ngModelChange)="stockTransfer.transferDate=$event" name="transferDate" required>
+    </div>
+
+    <button type="submit">{{ isEdit ? 'Update' : 'Create' }}</button>
+    <button type="button" routerLink="/stocktransfers">Cancel</button>
+  </form>
+</div>
