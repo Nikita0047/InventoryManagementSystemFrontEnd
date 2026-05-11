@@ -1,0 +1,25 @@
+<p>stock-transfer-list works!</p>
+<button type="button" routerLink="/add-stocktransfer">Add Stock Transfer</button>
+<table>
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>From Warehouse</th>
+      <th>To Warehouse</th>
+      <th>Transfer Date</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let st of stockTransfers">
+      <td>{{ st.id }}</td>
+      <td>{{ st.fromWarehouseName || st.fromWarehouseId }}</td>
+      <td>{{ st.toWarehouseName || st.toWarehouseId }}</td>
+      <td>{{ st.transferDate | date }}</td>
+      <td>
+        <button [routerLink]="['/edit-stocktransfer', st.id]">Edit</button>
+        <button (click)="delete(st.id)">Delete</button>
+      </td>
+    </tr>
+  </tbody>
+</table>

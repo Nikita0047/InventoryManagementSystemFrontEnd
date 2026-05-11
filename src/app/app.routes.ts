@@ -7,6 +7,10 @@ import { WarehouseForm } from './warehouses/warehouse-form/warehouse-form';
 import { WarehouseList } from './warehouses/warehouse-list/warehouse-list';
 import { StockList } from './stocks/stock-list/stock-list';
 import { StockForm } from './stocks/stock-form/stock-form';
+import { StockTransferItemList } from './stocks/stock-transfer-item-list/stock-transfer-item-list';
+import { StockTransferItemForm } from './stocks/stock-transfer-item-form/stock-transfer-item-form';
+import { StockTransferList } from './stocks/stock-transfer-list/stock-transfer-list';
+import { StockTransferForm } from './stocks/stock-transfer-form/stock-transfer-form';
 import { UserList } from './Users/user-list/user-list';
 import { SignupForm } from './auth/signup-form/signup-form';
 import { LoginForm } from './auth/login-form/login-form';
@@ -37,9 +41,19 @@ export const routes: Routes = [
   {path: 'add-stock', component: StockForm},
   {path: 'edit-stock/:id', component: StockForm},
 
+  {path: 'stocktransfers', component: StockTransferList},
+  {path: 'add-stocktransfer', component: StockTransferForm},
+  {path: 'edit-stocktransfer/:id', component: StockTransferForm},
+
+  {path: 'stocktransferitems', component: StockTransferItemList},
+  {path: 'add-stocktransferitem', component: StockTransferItemForm},
+  {path: 'edit-stocktransferitem/:id', component: StockTransferItemForm},
+
  
 
 
   { path: '**', redirectTo: 'products' },
 
 ];
+
+ 
